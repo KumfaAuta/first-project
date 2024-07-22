@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+      }
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding-top: 20%;
+      }
+    </style>
+    <title>Currency Classifier</title>
+  </head>
+  <body>
+    <video autoplay muted loop class="video-background">
+      <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+    </video>
+    <div class="content container">
+      <h1>Upload an Image for Currency Classification</h1>
+      <form action="/" method="post" enctype="multipart/form-data" class="mt-4">
+        <div class="form-group">
+          <input type="file" name="file" accept="image/*" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary">Classify</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
